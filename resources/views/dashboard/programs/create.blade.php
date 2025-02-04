@@ -22,20 +22,28 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            {{-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="kategori" class="form-label">Category</label>
                 <select class="form-select" name="kategori_id">
                     @foreach ($kategoris as $kategori)
                         @if (old('kategori_id') == $kategori->id)
-                            <option value="{{ $kategori->id }}" selected>{{ $kategori->name }}</option>
+                            <option value="{{ $kategori->id }}" selected>{{ $kategori->nama }}</option>
                         @else
-                            <option value="{{ $kategori->id }}">{{ $kategori->name }}</option>
+                            <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                         @endif
                     @endforeach
                 </select>
-            </div> --}}
+            </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Post Image</label>
+                <label for="url" class="form-label">Link URL Youtube</label>
+                <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url"
+                    required autofocus value="{{ old('url') }}">
+                @error('url')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Thumbnail</label>
                 <img class="img-preview img-fluid mb-3 col-sm-5">
                 <input class="form-control  @error('image') is-invalid @enderror" type="file" id="image"
                     name="image" onchange="previewImage()">
@@ -43,16 +51,16 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
                 @error('body')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
                 <input id="body" type="hidden" name="body" value="{{ old('body') }}">
                 <trix-editor input="body"></trix-editor>
-            </div>
+            </div> --}}
 
-            <button type="submit" class="btn btn-primary">Create Post</button>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
 
     </div>

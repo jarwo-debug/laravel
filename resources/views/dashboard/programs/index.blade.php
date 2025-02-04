@@ -20,6 +20,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col">Category</th>
+                    <th scope="col">URL Link</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -28,7 +29,8 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $program->title }}</td>
-                        {{-- <td>{{ $program->kategori->nama }}</td> --}}
+                        <td>{{ $program->kategori->nama }}</td>
+                        <td>{{ $program->url_link }}</td>
                         <td>
                             <a href="/dashboard/programs/{{ $program->slug }}" class="badge bg-info">
                                 <span class="bi bi-eye"></span></a>
