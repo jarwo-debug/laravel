@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('url_link');
             $table->text('description');
-            $table->string('thumbnail');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -78,7 +78,7 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware(IsAdmin::class);
 
-
-Route::resource('/dashboard/programs', DashboardProgramController::class)->except('show')->middleware('auth');
+Route::get('/dashboard/programs/checkSlug', [DashboardProgramController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/programs', DashboardProgramController::class)->middleware('auth');
 
 Route::resource('/dashboard/kategoris', AdminCategoryController::class)->except('show')->middleware(IsAdmin::class);
