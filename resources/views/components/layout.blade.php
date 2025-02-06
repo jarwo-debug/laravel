@@ -55,6 +55,8 @@
 
 </body>
 
-<x-footer></x-footer>
+<x-footer>
+
+</x-footer>
 
 </html>

@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:block">
+                {{-- <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         @auth
                             <ul class="navbar-nav ms-auto">
@@ -72,7 +72,7 @@
                             </ul>
                         @endauth
                     </div>
-                </div>
+                </div> --}}
                 <div class="-mr-2 flex md:hidden">
                     <!-- Mobile menu button -->
                     <button type="button" @click="isOpen = !isOpen"
