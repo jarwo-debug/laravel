@@ -46,11 +46,12 @@
 
         @if ($posts->count())
 
-            <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div
+                class="w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 @if ($posts[0]->image)
                     <div style="max-height: 400px; overflow:hidden;">
                         <a href="/posts/{{ $posts[0]->slug }}">
-                            <img class="h-auto max-w-full mx-auto rounded-t-lg mt-4 "
+                            <img class="h-auto w-full mx-auto rounded-t-lg mt-4 px-3 "
                                 src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}">
                         </a>
                     </div>

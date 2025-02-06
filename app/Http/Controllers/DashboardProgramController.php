@@ -35,6 +35,7 @@ class DashboardProgramController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:programs',
@@ -43,6 +44,8 @@ class DashboardProgramController extends Controller
             'description' => 'required',
             'url_link' => 'required',
         ]);
+
+
 
         if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('thumbnail-images');

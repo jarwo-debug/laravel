@@ -32,8 +32,8 @@
                         <td>{{ $program->kategori->nama }}</td>
                         <td>{{ $program->url_link }}</td>
                         <td>
-                            <a href="/dashboard/programs/{{ $program->slug }}" class="badge bg-info">
-                                <span class="bi bi-eye"></span></a>
+                            {{-- <a href="/dashboard/programs/{{ $program->slug }}" class="badge bg-info">
+                                <span class="bi bi-eye"></span></a> --}}
                             <a href="/dashboard/programs/{{ $program->slug }}/edit" class="badge bg-warning">
                                 <span class="bi bi-pencil-square"></span></a>
                             <form action="/dashboard/programs/{{ $program->slug }}" method="post" class="d-inline">

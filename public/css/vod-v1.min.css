@@ -1141,10 +1141,8 @@ footer {
     width: 100%;
     padding: 2% 3%;
     margin: 0 auto;
-    /* background: #02104b; */
+    background: #02104b;
     max-width: 1920px
-    /* background: #344cc9;
-    background: linear-gradient(0deg, #344cc9 0%, #0323af 0%, #010d3c 100%) */
 }
 
 .footer {

@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class Program extends Model
 {
@@ -17,6 +18,20 @@ class Program extends Model
     public function kategori(): BelongsTo
     {
         return $this->belongsTo(Kategori::class);
+    }
+
+    public function scopeFilter(Builder $query, array $filters): void
+    {
+        $query->when(
+            $filters['search'] ?? false,
+            fn($query, $search) =>
+            $query->where('title', 'like', '%' . $search . '%')
+        );
+        $query->when(
+            $filters['kategori'] ?? false,
+            fn($query, $kategori) =>
+            $query->whereHas('ka', fn($query) => $query->where('slug', $kategori))
+        );
     }
 
     public function getRouteKeyName()

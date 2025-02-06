@@ -234,147 +234,76 @@
                                 </a>
                             </div>
             </section>
+        </div>
+    </section>
 
-            {{-- <section class="bg-white ">
-                <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24 ">
-                    <div class="max-w-3xl mx-auto text-center">
-                        <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">
-                            Schedule
-                        </h2>
 
-                        <div class="mt-4">
-                            <a href="#" title=""
-                                class="inline-flex items-center text-lg font-medium text-primary-600 hover:underline dark:text-primary-500">
-                                Learn more about our agenda
-                                <svg aria-hidden="true" class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
+
+    <div class="mx-auto  px-4 py-6 sm:px-6 lg:px-8">
+        @if ($programs->count())
+            <div class="vodMain__grid">
+                <div class="vod vodhidden boxContent__box vodMain__gridTwo">
+                    <div class="vod-thumb"><img width="100%" src="{{ asset('storage/' . $programs[0]->image) }}"
+                            alt="{{ $programs[0]->kategori->nama }}" title="{{ $programs[0]->title }}"
+                            style="max-height: 400px; overflow:hidden;">
                     </div>
-
-                    <div class="flow-root max-w-3xl mx-auto mt-8 sm:mt-12 lg:mt-16">
-                        <div class="-my-4 divide-y divide-gray-200 dark:divide-gray-700">
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    08:00 - 09:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Opening remarks</a>
-                                </h3>
+                    <div class="vod-layer"></div>
+                    <div class="vod-box">
+                        <a href="/video/{{ $programs[0]->slug }}">
+                            <div class="vod-title">
+                                <h4>{{ $programs[0]->kategori->nama }}</h4>
+                                <h2>{{ $programs[0]->title }}</h2>
                             </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    09:00 - 10:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Bergside LLC: Controlling the video
-                                        traffic
-                                        flows</a>
-                                </h3>
+                            <div class="vod-play">
+                                <img src="img/icon/play-icon-white-fix.png" alt="" />
                             </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    10:00 - 11:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Flowbite - An Open Framework for
-                                        Forensic
-                                        Watermarking</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    11:00 - 12:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Coffee Break</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    12:00 - 13:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Scaling your brand from €0 to
-                                        multimillion
-                                        euros</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    13:00 - 14:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Updates from the Open Source
-                                        Multimedia
-                                        community</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    14:00 - 15:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Exploring the balance between
-                                        customer
-                                        acquisition and retention</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    15:00 - 16:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Flowbite - An Open Framework for
-                                        Forensic
-                                        Watermarking</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    16:00 - 14:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Scaling your brand from €0 to
-                                        multimillion
-                                        euros</a>
-                                </h3>
-                            </div>
-
-                            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                                <p
-                                    class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                                    17:00 - 14:00
-                                </p>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    <a href="#" class="hover:underline">Drinks & networking</a>
-                                </h3>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
-            </section> --}}
+                <div class="vod vodhidden boxContent__box vodMain__gridTwo">
+                    <div class="vod-thumb"><img width="100%" src="{{ asset('storage/' . $programs[1]->image) }}"
+                            alt="{{ $programs[1]->kategori->nama }}" title="{{ $programs[1]->title }}"
+                            style="max-height: 400px; overflow:hidden;">
+                    </div>
+                    <div class="vod-layer"></div>
+                    <div class="vod-box">
+                        <a href="/video/{{ $programs[1]->slug }}">
+                            <div class="vod-title">
+                                <h4>{{ $programs[1]->kategori->nama }}</h4>
+                                <h2>{{ $programs[1]->title }}</h2>
+                            </div>
+                            <div class="vod-play">
+                                <img src="img/icon/play-icon-white-fix.png" alt="" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="vod vodhidden boxContent__box vodMain__gridTwo">
+                    <div class="vod-thumb"><img width="100%" src="{{ asset('storage/' . $programs[2]->image) }}"
+                            alt="{{ $programs[2]->kategori->nama }}" title="{{ $programs[2]->title }}"
+                            style="max-height: 400px; overflow:hidden;">
+                    </div>
+                    <div class="vod-layer"></div>
+                    <div class="vod-box">
+                        <a href="/video/{{ $programs[2]->slug }}">
+                            <div class="vod-title">
+                                <h4>{{ $programs[2]->kategori->nama }}</h4>
+                                <h2>{{ $programs[2]->title }}</h2>
+                            </div>
+                            <div class="vod-play">
+                                <img src="img/icon/play-icon-white-fix.png" alt="" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+        @endif
+
+
+
+
+    </div>
+    </section>
+    </div>
 
 
 
