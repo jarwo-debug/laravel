@@ -1137,14 +1137,12 @@
     }
 }
 
-footer {
+/* footer {
     width: 100%;
     padding: 2% 3%;
     margin: 0 auto;
-    /* background: #02104b; */
+    background: #02104b;
     max-width: 1920px
-    /* background: #344cc9;
-    background: linear-gradient(0deg, #344cc9 0%, #0323af 0%, #010d3c 100%) */
 }
 
 .footer {
@@ -1221,7 +1219,7 @@ footer {
     font-weight: 400;
     display: block;
     padding: 3px 0
-}
+} */
 
 .mux__iframebox {
     position: relative;
@@ -1330,7 +1328,7 @@ footer {
     font-weight: 500
 }
 
-.mux__footer {
+/* .mux__footer {
     width: 100%;
     position: sticky;
     bottom: 0;
@@ -1341,18 +1339,18 @@ footer {
     align-items: center;
     justify-content: center;
     font-weight: 500
-}
+} */
 
 @media screen and (max-width: 1360px) {
-    .footer .google-auto-placed {
+    /* .footer .google-auto-placed {
         display:none !important
-    }
-
+    } */
+/* 
     .footer__logo {
         width: 190px
-    }
+    } */
 
-    .footer__company {
+    /* .footer__company {
         margin-top: 15px;
         margin-bottom: 10px;
         text-transform: uppercase;
@@ -1387,7 +1385,7 @@ footer {
 
     .footer__side {
         margin-right: 50px
-    }
+    } */
 
     .mux__container {
         padding: 0 50px
@@ -1424,10 +1422,10 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
-    .footer__side {
+    /* .footer__side {
         width:50%;
         margin-right: 20px
-    }
+    } */
 
     .mux__iframebox {
         height: 100vh
@@ -1435,7 +1433,7 @@ footer {
 }
 
 @media screen and (max-width: 900px) {
-    footer {
+    /* footer {
         padding:25px 20px
     }
 
@@ -1464,7 +1462,7 @@ footer {
 
     .footer__address {
         font-size: 12px
-    }
+    } */
 
     .mux__container {
         padding: 0
@@ -1501,7 +1499,7 @@ footer {
 }
 
 @media screen and (max-width: 765px) {
-    footer {
+    /* footer {
         padding:25px 20px
     }
 
@@ -1526,16 +1524,16 @@ footer {
     .footer__address {
         font-size: 14px
     }
-}
+} */
 
 @media screen and (max-width: 500px) {
-    .footer__logo {
+    /* .footer__logo {
         width:175px
     }
 
     .footer__address p {
         padding: 0
-    }
+    } */
 
     .mux__wrap {
         padding: 20px
@@ -1569,9 +1567,9 @@ footer {
         font-size: 12px
     }
 
-    .mux__footer {
+    /* .mux__footer {
         font-size: 14px
-    }
+    } */
 }
 
 @font-face {

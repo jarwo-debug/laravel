@@ -7,7 +7,6 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\CategoryProgram;
-use App\Models\Kategori;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,11 +25,11 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
-        $this->call([CategorySeeder::class, UserSeeder::class, KategoriSeeder::class]);
+        $this->call([CategorySeeder::class, UserSeeder::class, CategoryProgramSeeder::class]);
         Post::factory(20)->recycle([
             Category::all(),
             User::all(),
-            Kategori::all()
+            CategoryProgram::all()
         ])->create();
     }
 }

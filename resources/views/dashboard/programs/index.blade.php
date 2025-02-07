@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.layout')
+@extends('dashboard.layouts.main')
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -14,7 +14,7 @@
     <div class="table-responsive small col-lg-8">
         <a href="/dashboard/programs/create" class="btn btn-primary mb-3">Create new program</a>
 
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm ">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -32,8 +32,7 @@
                         <td>{{ $program->kategori->nama }}</td>
                         <td>{{ $program->url_link }}</td>
                         <td>
-                            {{-- <a href="/dashboard/programs/{{ $program->slug }}" class="badge bg-info">
-                                <span class="bi bi-eye"></span></a> --}}
+
                             <a href="/dashboard/programs/{{ $program->slug }}/edit" class="badge bg-warning">
                                 <span class="bi bi-pencil-square"></span></a>
                             <form action="/dashboard/programs/{{ $program->slug }}" method="post" class="d-inline">

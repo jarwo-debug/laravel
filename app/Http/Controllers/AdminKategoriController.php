@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Kategori;
+use App\Models\Program;
 use Illuminate\Http\Request;
 
-class AdminCategoryController extends Controller
+class AdminKategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        return view('dashboard.categories.index', [
-            'categories' => Category::all()
+        return view('dashboard.kategoris.index', [
+            'kategoris' => Kategori::all()
         ]);
     }
 
@@ -37,7 +37,7 @@ class AdminCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Program $program)
     {
         //
     }
@@ -45,7 +45,7 @@ class AdminCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit(Program $program)
     {
         //
     }
@@ -53,7 +53,7 @@ class AdminCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Program $program)
     {
         //
     }
@@ -61,7 +61,7 @@ class AdminCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(Program $program)
     {
         //
     }

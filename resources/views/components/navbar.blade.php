@@ -11,7 +11,7 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                             <x-nav-link href="/live" :active="request()->is('live')">Live</x-nav-link>
-                            <x-nav-link href="/programs" :active="request()->is('programs')">Program</x-nav-link>
+                            <x-nav-link href="/video" :active="request()->is('video')">Video</x-nav-link>
                             <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
                             <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
                             <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="hidden md:block">
+                <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         @auth
                             <ul class="navbar-nav ms-auto">
@@ -72,7 +72,7 @@
                             </ul>
                         @endauth
                     </div>
-                </div> --}}
+                </div>
                 <div class="-mr-2 flex md:hidden">
                     <!-- Mobile menu button -->
                     <button type="button" @click="isOpen = !isOpen"
@@ -102,7 +102,7 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                 <x-nav-link href="/live" :active="request()->is('live')">Live</x-nav-link>
-                <x-nav-link href="/programs" :active="request()->is('programs')">Program</x-nav-link>
+                <x-nav-link href="/video" :active="request()->is('video')">Video</x-nav-link>
                 <x-nav-link href="/posts" :active="request()->is('/posts')">Blog</x-nav-link>
                 <x-nav-link href="/about" :active="request()->is('/about')">About</x-nav-link>
                 <x-nav-link href="/contact" :active="request()->is('/contact')">Contact</x-nav-link>
@@ -110,7 +110,7 @@
 
             </div>
             <div class="border-t border-gray-700 pb-3 pt-4">
-                {{-- <div class="flex items-center px-5">
+                <div class="flex items-center px-5">
                     <div class="flex-shrink-0">
                         <img class="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -121,7 +121,7 @@
                         <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
                     </div>
 
-                </div> --}}
+                </div>
                 <div class="mt-3 space-y-1 px-2">
                     <a href="#"
                         class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Dashboard</a>

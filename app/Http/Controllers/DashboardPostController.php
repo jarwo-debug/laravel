@@ -95,7 +95,7 @@ class DashboardPostController extends Controller
 
 
         if ($request->slug != $post->slug) {
-            $rules['slug'] = 'required|unique:posts';
+            $rules['slug'] = "required|unique:posts";
         }
         $validatedData = $request->validate($rules);
 
@@ -120,7 +120,7 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        if ($post->image) {
+        if ($post->mage) {
             Storage::delete($post->image);
         }
         Post::destroy($post->id);

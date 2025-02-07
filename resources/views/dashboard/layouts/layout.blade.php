@@ -50,7 +50,7 @@
 <body class="bg-gray-100 font-family-karla flex">
 
 
-    @include('dashboard.layouts.sidebar')
+    @include('dashboard.layouts.sidebar__')
 
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
 

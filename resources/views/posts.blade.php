@@ -46,12 +46,11 @@
 
         @if ($posts->count())
 
-            <div
-                class="w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 @if ($posts[0]->image)
                     <div style="max-height: 400px; overflow:hidden;">
                         <a href="/posts/{{ $posts[0]->slug }}">
-                            <img class="h-auto w-full mx-auto rounded-t-lg mt-4 px-3 "
+                            <img class="h-auto max-w-full mx-auto rounded-t-lg mt-4 "
                                 src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}">
                         </a>
                     </div>
@@ -65,10 +64,9 @@
                             {{ $posts[0]->title }}</h5>
                     </a>
                     <p class="text-center px-5">
-                        <small class="text-muted">By <a href="/posts?author={{ $posts[0]->author->username }}"
-                                class=" text-primary-600 dark:text-primary-500 hover:underline text-sm">{{ $posts[0]->author->name }}</a>
-                            in
-                            <a href="/posts?category={{ $posts[0]->category->slug }}"
+                        <small class="text-muted">By<a href="/authors/{{ $posts[0]->author->username }}"
+                                class=" text-primary-600 dark:text-primary-500 hover:underline text-sm">{{ $posts[0]->author->name }}</a>in
+                            <a href="/categories/{{ $posts[0]->category->slug }}"
                                 class="text-decoration-none text-primary-600 dark:text-primary-500 hover:underline
                                 text-sm">{{ $posts[0]->category->name }}</a>
                             {{ $posts[0]->created_at->diffForHumans() }}
@@ -100,13 +98,7 @@
                     @foreach ($posts->skip(1) as $post)
                         <div
                             class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"">
-                            <a href="/posts?category={{ $post->category->slug }}">
-                                <span
-                                    class="bg-{{ $post->category->color }}-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 ">
 
-                                    {{ $post->category->name }}
-                                </span>
-                            </a>
                             <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top"
                                 alt="{{ $post->category->name }}">
                             <div class="card-body">
@@ -114,7 +106,7 @@
                                     {{ $post->title }}</h5>
                                 <p>
                                     <small class="text-muted">
-                                        By. <a href="/posts?author={{ $post->author->username }}"
+                                        By. <a href="/authors/{{ $posts[0]->author->username }}"
                                             class="text-decoration-none text-primary-600 dark:text-primary-500 hover:underline text-sm">{{ $posts[0]->author->name }}</a>
                                         {{ $posts[0]->created_at->diffForHumans() }}
                                     </small>

@@ -9,12 +9,11 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
-    {{-- <link rel="stylesheet" href="css/styledashboard.css"> --}}
+    <link rel="stylesheet" href="css/styledashboard.css">
     <link rel="stylesheet" href="css/vod.min.css">
-    {{-- <link rel="stylesheet" href="css/vod-v1.min.css"> --}}
-
-    <link rel="stylesheet" href="css/swiper.min.css" />
-    {{-- <link rel="stylesheet" href="css/styles.min.css" /> --}}
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="js/swiper.min.css" />
+    <link rel="stylesheet" href="js/styles.min.css?r=1604914972" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/custom.min.js"></script>
@@ -55,8 +54,6 @@
 
 </body>
 
-<x-footer>
-
-</x-footer>
+<x-footer></x-footer>
 
 </html>

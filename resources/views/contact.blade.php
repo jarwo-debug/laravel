@@ -1,5 +1,6 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
+    {{-- <h3 class="text-xl">My Contact</h3> --}}
 
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
