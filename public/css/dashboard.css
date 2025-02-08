@@ -24,6 +24,14 @@
   font-weight: 500;
 }
 
+.bg-sidebar {
+  background: linear-gradient(180deg, #7a8ef1 0%, #0323af 0%, #010d3c 100%);
+}
+
+.bg-header{
+  background: linear-gradient(0deg, #344cc9 0%, #0323af 0%, #010d3c 100%);
+}
+
 .sidebar .nav-link.active {
   color: #2470dc;
 }
@@ -41,6 +49,9 @@
   padding-bottom: .75rem;
   background-color: rgba(0, 0, 0, .25);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  background: linear-gradient(0deg, #344cc9 0%, #0323af 0%, #010d3c 100%);
+  background: url(img/logo/betv.png);
+  
 }
 
 .navbar .form-control {

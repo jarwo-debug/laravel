@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+=======
+use Cviebrock\EloquentSluggable\Services\SlugService;
+
+>>>>>>> 5cdf6db (update)
 
 class AdminCategoryController extends Controller
 {
@@ -23,7 +28,9 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.categories.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -31,7 +38,17 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:categories',
+            'color' => 'required',
+
+        ]);
+
+        Category::create($validatedData);
+
+        return redirect('/dashboard/categories')->with('success', 'New category has been added');
     }
 
     /**
@@ -39,7 +56,9 @@ class AdminCategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('dashboard.categories.show', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -47,7 +66,10 @@ class AdminCategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('dashboard.categories.edit', [
+            'category' => $category,
+
+        ]);
     }
 
     /**
@@ -55,7 +77,17 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'color' => 'required',
+
+        ]);
+
+        Category::where('id', $category->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/categories')->with('success', 'New category has been updated');
     }
 
     /**
@@ -63,6 +95,14 @@ class AdminCategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category->id);
+
+        return redirect('/dashboard/categories')->with('success', 'Category has been deleted!');
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

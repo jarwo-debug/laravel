@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <div class="table-responsive small col-lg-8">
+    <div class="table-responsive small col-lg-4">
         <a href="/dashboard/categories/create" class="btn btn-primary mb-3">Create new category</a>
 
         <table class="table table-striped table-sm">
@@ -28,8 +28,6 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $category->name }}</td>
                         <td>
-                            <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info">
-                                <span class="bi bi-eye"></span></a>
                             <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning">
                                 <span class="bi bi-pencil-square"></span></a>
                             <form action="/dashboard/categories/{{ $category->slug }}" method="post" class="d-inline">

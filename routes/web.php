@@ -3,12 +3,20 @@
 use App\Http\Controllers\AdminCategoryController;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Program;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+<<<<<<< HEAD
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Middleware\IsAdmin;
+=======
+use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminKategoriController;
+use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardProgramController;
+>>>>>>> 5cdf6db (update)
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -75,5 +83,25 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
+<<<<<<< HEAD
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware(IsAdmin::class);
+=======
+Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware(IsAdmin::class);
+
+Route::get('/dashboard/programs/checkSlug', [DashboardProgramController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/programs', DashboardProgramController::class)->middleware('auth');
+
+Route::resource('/dashboard/kategoris', AdminKategoriController::class)->except('show')->middleware(IsAdmin::class);
+
+
+
+Route::get('/programs', function () {
+    return view('programs', ['title' => 'Program', 'programs' => Program::filter(request(['search', 'kategori']))->latest()->paginate(5)->withQueryString()]);
+});
+
+Route::get('/video/{program:slug}', function (Program $program) {
+    return view('video', ['title' => 'Video detail', 'program' => $program]);
+});
+>>>>>>> 5cdf6db (update)
